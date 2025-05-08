@@ -1,5 +1,5 @@
 /*
-Developed by Eduardo Bulhões
+Developed by Eduardo Bezerra
 Date: 09/13/2024
 edubbulhoes@gmail.com
 linkedin: www.linkedin.com/in/ebezerra-it
@@ -9,6 +9,7 @@ const viewcamera = { x: 0, y: 0, z: -5 };
 const maxAxisSpeed = 0.1;
 
 // Movie parameters
+let startMovie = false;
 let scene = -1; // -1: title; 0: points; 1: lines; 2: No backlines; 3: Substance; 4: Shading; 5: Texture; 6: Ending
 let scenePoints = 0;
 let sceneEdges = 0;
@@ -79,9 +80,23 @@ function createMyCanvas() {
 }
 
 function setup() {
-  music.volume(0);
-  music.play();
+  //music.volume(1);
+  //music.play();
+  var a = createA('https://www.linkedin.com/in/ebezerra-it', 'Develped by Eduardo Bezerra', '_blank');
+  a.position(10, 10);
+  a.style('font-size', '12px');
+  a.style('font-family', 'arial');
+  a.style('text-decoration', 'none');
+  a.style('font-weight', 'normal');
+  a.style('color', '#ffffff'); 
+
   createMyCanvas();
+  cnv.mouseClicked(() => {
+    startMovie = true;
+    music.volume(1);
+    music.play();
+  });
+  
   colorMode(RGB, 255);
   
   imgTexture.resize(imageSize, imageSize);
@@ -126,7 +141,17 @@ function setup() {
 
 async function draw() {
   background(0);
-  credits();
+  //credits();
+  
+  if (!startMovie) {
+    textFont(font);
+    textSize(40);
+    fill('gray');
+    text('Click to start', -150, 0);
+
+    return;
+  }
+  
   rotateCube();
   
   if (flashStatus === 2) return;
@@ -140,7 +165,6 @@ async function draw() {
       fontSize = movietitleFontSize;
 
       if (movietitleTrigger) {
-        music.volume(1);
         setTimeout(() => {
           scene = 0;
           subtitleFadeStatus = 1;
@@ -294,7 +318,7 @@ function credits() {
   textFont(font);
   textSize(12);
   fill('white');
-  text('Develped by Eduardo Bulhoes - https://www.linkedin.com/in/ebezerra-it', -canvas2d.x/2+4, -canvas2d.y/2 + 14);
+  text('Develped by Eduardo Bezerra - https://www.linkedin.com/in/ebezerra-it', -canvas2d.x/2+4, -canvas2d.y/2 + 14);
 }
 
 function showSubtitle(textSubtitle, position, size, fadeSteps, showTime, fadeOutSteps) {
