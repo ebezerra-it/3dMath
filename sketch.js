@@ -79,7 +79,7 @@ function createMyCanvas() {
 }
 
 function setup() {
-  music.volume(1);
+  music.volume(0);
   music.play();
   createMyCanvas();
   colorMode(RGB, 255);
@@ -140,6 +140,7 @@ async function draw() {
       fontSize = movietitleFontSize;
 
       if (movietitleTrigger) {
+        music.volume(1);
         setTimeout(() => {
           scene = 0;
           subtitleFadeStatus = 1;
