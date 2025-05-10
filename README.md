@@ -25,7 +25,7 @@ This project is a personal homage to the early days of my journey in programming
 
 While modern browsers and GPUs now make these effects trivial, they once represented the edge of possibility for a group of high school tech students. This project is not only a celebration of how far we've come, but also a heartfelt tribute to those formative years.
 
-👉 **View the project on GitHub Pages:** [https://ebezerra-it.github.io/3dMath/](https://ebezerra-it.github.io/3dMath/)
+👉 **View the project on GitHub Pages:** [https://ebezerra-it.github.io/3dMath/](https://ebezerra-it.github.io/3dMath/index_us.html)
 
 📌 **Author's LinkedIn:** [Eduardo Bezerra](https://www.linkedin.com/in/ebezerra-it/)
 
