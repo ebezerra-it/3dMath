@@ -57,7 +57,6 @@ function setup() {
   cnv = createCanvas(canvasConfig.width, canvasConfig.height, WEBGL, glcanvas); 
 
   txt = createGraphics(canvasConfig.width, canvasConfig.height);
-  //console.log(txt.elt.style);
   txt.elt.style.display = "block";
   txt.elt.style.position = "absolute";  
   txt.elt.style.top = "100px";
@@ -211,12 +210,9 @@ function webglDrawPointsArray(pointsData) {
     'void main(void) {' +
       'gl_Position = vec4(coordinates, 1.0);' +
       'vColor = color;'+
-     // 'glEnable(GL_PROGRAM_POINT_SIZE);'
       'gl_PointSize = ' + txtPointSize.toFixed(1) + ';' +
-      // 'glPointSize(' + txtPointSize.toFixed(1) + ');' +
     '}';
 
-  //console.log(vertCode);
   var vertShader = gl.createShader(gl.VERTEX_SHADER);
   gl.shaderSource(vertShader, vertCode);
 
@@ -266,9 +262,6 @@ function webglDrawPointsArray(pointsData) {
   gl.enableVertexAttribArray(color); 
 
   // Draw points
-  //gl.enable(gl.GL_PROGRAM_POINT_SIZE);
-  console.log(gl);
-  //strokeWeight(4); 
   gl.drawArrays(gl.POINTS, 0, points.length/3); 
 }
 
@@ -281,8 +274,8 @@ function webglcleanbackground(rgbaColor) {
   );
 
   // Enable the depth test
-  //gl.enable(gl.DEPTH_TEST);
+  gl.enable(gl.DEPTH_TEST);
 
   // Clear the color buffer bit
-  //gl.clear(gl.COLOR_BUFFER_BIT);
+  gl.clear(gl.COLOR_BUFFER_BIT);
 }

@@ -43,8 +43,8 @@ let font;
 const fontFile = 'PixelifySans-VariableFont_wght.ttf';
 
 let subtitleFadeStatus = 0; // 0: not triggered; 1: triggered; 2: fading
-let subtitleShowtime = 500; // -1: indefinitely
-let subtitleFontSize = 20;
+let subtitleShowtime = 1000; // -1: indefinitely
+let subtitleFontSize = 30;
 let movietitleFontSize = 40;
 let fontSize = subtitleFontSize;
 let movietitleTrigger = true; 
@@ -89,50 +89,50 @@ const localizated_messages = [
   {
     code: 'SCENE_POINTS',
     localizations: [
-      { language: 'EN-US', message: "Points define the cube's hidden structure", screen_offset: { x: canvas2d.x/2 - 200, y: canvas2d.y/2 + 170 }},
-      { language: 'PT-BR', message: 'Pontos revelam a estrutura oculta do cubo', screen_offset: { x: canvas2d.x/2 - 200, y: canvas2d.y/2 + 170 }},
+      { language: 'EN-US', message: "Points define the cube's\nhidden structure", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
+      { language: 'PT-BR', message: 'Pontos revelam a estrutura\noculta do cubo', screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
     ]
   },
   {
     code: 'SCENE_EDGES',
     localizations: [
-      { language: 'EN-US', message: "Connecting points to form the edges", screen_offset: { x: canvas2d.x/2 - 170, y: canvas2d.y/2 + 170 }},
-      { language: 'PT-BR', message: "Conectando os pontos para formar as arestas", screen_offset: { x: canvas2d.x/2 - 210, y: canvas2d.y/2 + 170 }},
+      { language: 'EN-US', message: "Connecting points to form\nthe edges", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
+      { language: 'PT-BR', message: "Conectando os pontos para\nformar as arestas", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
     ]
   },
   {
     code: 'SCENE_NO_BACKLINES',
     localizations: [
-      { language: 'EN-US', message: "Unveiling essentials by hiding the back", screen_offset: { x: canvas2d.x/2 - 200, y: canvas2d.y/2 + 170 }},
-      { language: 'PT-BR', message: "Desvendando o essencial ao ocultar a parte de trás.", screen_offset: { x: canvas2d.x/2 - 230, y: canvas2d.y/2 + 170 }},
+      { language: 'EN-US', message: "Unveiling essentials by hiding\nthe back", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
+      { language: 'PT-BR', message: "Desvendando o essencial ao ocultar\na parte de trás.", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
     ]
   },
   {
     code: 'SCENE_SOLID',
     localizations: [
-      { language: 'EN-US', message: "The cube comes alive in color", screen_offset: { x: canvas2d.x/2 - 150, y: canvas2d.y/2 + 170 }},
-      { language: 'PT-BR', message: "O cubo ganha vida em cores", screen_offset: { x: canvas2d.x/2 - 140, y: canvas2d.y/2 + 170 }},
+      { language: 'EN-US', message: "The cube comes alive in color", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
+      { language: 'PT-BR', message: "O cubo ganha vida em cores", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
     ]
   },
   {
     code: 'SCENE_SHADE',
     localizations: [
-      { language: 'EN-US', message: "Light and shadow shape the cube", screen_offset: { x: canvas2d.x/2 - 150, y: canvas2d.y/2 + 170 }},
-      { language: 'PT-BR', message: "Luz e sombra moldam a forma do cubo", screen_offset: { x: canvas2d.x/2 - 160, y: canvas2d.y/2 + 170 }},
+      { language: 'EN-US', message: "Light and shadow shape the cube", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
+      { language: 'PT-BR', message: "Luz e sombra moldam a forma do cubo", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
     ]
   },
   {
     code: 'SCENE_TEXTURE',
     localizations: [
-      { language: 'EN-US', message: "Metallic texture adds sleek refinement", screen_offset: { x: canvas2d.x/2 - 200, y: canvas2d.y/2 + 170 }},
-      { language: 'PT-BR', message: "A textura metálica adiciona um toque de sofisticação", screen_offset: { x: canvas2d.x/2 - 250, y: canvas2d.y/2 + 170 }},
+      { language: 'EN-US', message: "Metallic texture adds sleek\nrefinement", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
+      { language: 'PT-BR', message: "A textura metálica adiciona um\ntoque de sofisticação", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 + 170 }},
     ]
   },
   {
     code: 'ENDING',
     localizations: [
-      { language: 'EN-US', message: "Thank you for watching...", screen_offset: { x: canvas2d.x/2 - 150, y: canvas2d.y/2 }},
-      { language: 'PT-BR', message: "Obrigado por assistir...", screen_offset: { x: canvas2d.x/2 - 150, y: canvas2d.y/2 }},
+      { language: 'EN-US', message: "Thank you for watching...", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 }},
+      { language: 'PT-BR', message: "Obrigado por assistir...", screen_offset: { x: canvas2d.x/2, y: canvas2d.y/2 }},
     ]
   },
 ]
@@ -459,6 +459,7 @@ function showSubtitle(textSubtitle, position, size, fadeSteps, showTime, fadeOut
   txt.textStyle(NORMAL);
   txt.textFont(font);
   txt.textSize(size);
+  txt.textAlign(CENTER);
   txt.fill(color(subtitleColor.r, subtitleColor.g, subtitleColor.b));
   txt.text(textSubtitle, position.x, position.y);
 
