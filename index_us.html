@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Eduardo Bezerra - Time Tunnel</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Time Tunnel</a></h1>
+						<nav>
+							<a href="index.html"><img class="imglanguage" src="images/brlflag.jpg"/></a>
+							<a href="index_us.html"><img class="imglanguage" src="images/usaflag.jpg"/></a>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo">
+								<img class="imgprofile" src="images/profile.jpg" alt="" />
+							</div>
+
+							<h2>Time Tunnel</h2>
+							<p>In 1996, I was in high school studying technical electronics at CEFET-RJ and was part of a group of students who wrote C++ programs on a "powerful" 386DX40 to create 3D animations using the most beautiful and pure mathematics.</p>
+							<p>In a moment of idleness and reflection, I started thinking about how the choices, friendships, and interests from that time influenced many of the steps I took later in life. I decided to pay tribute to all those experiences by rewriting some of those animations. Instead of Borland C++, I used p5js—without relying on any 3D modeling libraries. I hope you enjoy watching them as much as I enjoyed creating them.</p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="./3d/thecube/index.html" class="image"><img src="images/thecube.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">The Cube</h2>
+										<p>This was the first animation I managed to create, since it involves the simplest polyhedron, but the lessons learned from it served as the foundation for the others.</p>
+										<a href="./3d/thecube/index.html" class="special">Watch</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="./3d/thesphere/index.html" class="image"><img src="images/thesphere.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">The Sphere</h2>
+										<p>The sphere brought the challenge of creating a solid whose points are obtained through the interpolation of trigonometric functions. Twenty-eight years ago, the solid sphere was static because my 386 couldn&apos;t handle the animation. So, by that time, I chose to animate only the wireframe view of the sphere.</p>
+										<a href="./3d/thesphere/index.html" class="special">Watch</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="./3d/theicosahedron/index.html" class="image"><img src="images/theicosahedron.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">The Icosahedron</h2>
+										<p>Just a polyhedron slightly more complex than the cube. The challenge in this animation was mapping each face based on the points, with the edges ordered correctly so that the cross product of the edges of each face points the normal vector outward from the polyhedron. When I created this animation for the first time, I had the icosahedron "morph" into the cube and vice versa, but I didn&apos;t have time to include that feature in this remake.</p>
+										<a href="./3d/theicosahedron/index.html" class="special">Watch</a>
+									</div>
+								</div>
+							</section>
+
+
+						<!-- Four -->
+							<section id="four" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="./3d/thegrid/index.html" class="image"><img src="images/thegrid.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">The Grid</h2>
+										<p>Another animation using interpolation through trigonometric functions. We affectionately called it the "drop". Back then, dual animation (the progression of the trigonometric function along with rotation on all three axes) wasn&apos;t possible due to limited processing power. It was a joy to finally see it working.</p>
+										<a href="./3d/thegrid/index.html" class="special">Watch</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Five -->
+							<section id="five" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="./3d/thelove/index.html?language=EN-US" class="image"><img src="images/thelove_us.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">The Love</h2>
+										<p>This animation holds special meaning. My dear friend and brother, <a href="https://www.linkedin.com/in/sother/" target="_blank">Luciano Sother</a>, originally came up with this animation, which he created back then as a tribute to his crush, displaying "Tatiana / I adore you". Sadly, in 2013, a heart attack took my beloved friend far too soon. Based on the memories of his animation, I recreated it for my beloved wife, but I give full credit and homage to my cherished friend.</p>
+										<a href="./3d/thelove/index.html?language=EN-US" class="special">Watch</a>
+									</div>
+								</div>
+							</section>
+						
+						<!-- Six -->
+							<section id="six" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="./3d/thetexture/index.html" class="image"><img src="images/thetexture.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">The Texture</h2>
+										<p>Using the well-known and efficient <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm" target="_blank">Bresenham's line algorithm</a>, I developed a texture mapping algorithm. The computational cost of this process is high, which can lead to degraded UX on some mobile devices. Therefore, the experience is best suited for computers with a GPU. To mitigate this issue, I split the quadrilateral processing into two triangles and handled them in separate threads. I also created functions using WebGL commands to draw large batches of points, leveraging the GPU. Currently, these algorithms are executed directly on the graphics card hardware, resulting in a tremendous performance boost.</p>
+										
+										<a href="./3d/thetexture/index.html" class="special">Watch</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Seven -->
+							<section id="seven" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="./3d/themovie/index.html?language=EN-US" class="image"><img src="images/themovie_us.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">The Movie</h2>
+										<p>This animation brings together the knowledge and techniques from the previous animations. It is a short film that narrates the creation of the cube — from individual points to its formation as a metallic solid through texture application.</p>
+										<p>For the best experience, please enable your device's audio.</p>
+										<a href="./3d/themovie/index.html?language=EN-US" class="special">Watch</a>
+									</div>
+								</div>
+							</section>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Contact</h2>
+
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Belo Horizonte/MG - Brazil
+								</li>
+								<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/ebezerra-it/">linkedin.com/in/ebezerra-it/</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>Design: Eduardo Bezerra</li>
+								<li>Model: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
